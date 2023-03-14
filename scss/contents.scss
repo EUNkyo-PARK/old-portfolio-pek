@@ -7,3 +7,71 @@
     width:100%;
     height:auto;
 }
+/*****common*****/
+/*font*/
+.fc_gray{
+    color:#b1b1b1;
+}
+/*****header******/
+.header_box{
+    position: fixed;
+    top:2.5rem;
+    width: 100%;
+    height: 3.5rem;
+    z-index: 99;
+    .h1_tit{
+        height: 100%;
+        color:#fff;
+        margin-left: 1.5rem;
+        .pic{
+            width:3.5rem;
+            height:3.5rem;
+            display: inline-block;
+            border-radius: 2.5rem;
+            background-color: red;
+            vertical-align: middle;
+        }
+        strong{
+            margin:0 0.5rem;
+            font-size:1.3rem;
+        }
+        span{
+            font-size: 1.1rem;
+            font-weight: normal;
+        }
+    }
+    .list_bar_box{
+        position: absolute;
+        top:-1.5rem;
+        width:100%;
+        height: 0.2rem;
+        display: flex;
+        padding:0 0.5rem;
+        box-sizing: border-box;
+        .list_bar{
+            height: 100%;
+            width: inherit;
+            border-radius: 0.2rem;
+            background-color: rgb(255, 255, 255,0.5);
+            &.list_bar{
+                margin-left: 0.3rem;
+            }
+        }
+    }
+}
+.contents_box{
+    display: flex;
+    .content{
+        position: fixed;
+        top:0;
+        left:0;
+        right:0;
+        bottom:0;
+        max-width:100%;
+        max-height: 100%;
+        z-index: 1;
+        &.about_me{
+            background: url(../images/img_mountain1280.jpg) no-repeat 0 0 / cover;
+        }
+    }
+}
