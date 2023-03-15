@@ -8,9 +8,104 @@
     height:auto;
 }
 /*****common*****/
+/*button*/
+.btn {
+    position: relative;
+    display: block;
+    width: fit-content;
+    height: fit-content;
+    margin: 1rem auto;
+    padding: 1.2rem 2rem;
+    border-radius: 5px;
+    font-size: 1.6rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    &,.btn::after{
+        -webkit-transition: all 0.3s;
+        -moz-transition: all 0.3s;
+        -o-transition: all 0.3s;
+        transition: all 0.3s;
+    }
+}
+.common_btn {
+    background: none;
+    border: 1px solid #fff;
+    color: #fff;
+    overflow: hidden;
+  &::before{
+    content: '';
+    position: absolute;
+    background: #fff;
+    z-index: -1;
+  }
+  &:hover{
+    color: #616161;
+  }
+  &::after{
+    content: '';
+    height: 100%;
+    left: -50%;
+    top: 0;
+    background: #fff;
+    position: absolute;
+    z-index: -1;
+    transform: skew(50deg);
+    transition-duration: 0.6s;
+    transform-origin: top left;
+    width: 0;
+  }
+  &:hover::after{
+    height: 100%;
+    width: 150%;
+  }
+}
+
 /*font*/
 .fc_gray{
     color:#b1b1b1;
+}
+.fc_white{
+    color:#fff;
+}
+.fc_yellow{
+    color:#ffc400;
+}
+/*title*/
+.h3_tit{
+    width:100%;
+    margin-bottom: 2rem;
+    color:#fff;
+    font-size:5rem;
+    font-weight: 900;
+    word-break: keep-all;
+    text-align: center;
+    text-transform:uppercase;
+    box-sizing: border-box;
+}
+.sub_tit{
+    width:100%;
+    margin-bottom: 0.5rem;
+    text-align: center;
+    color:#fff;
+    font-size:2rem;
+    font-weight: 900;
+    &+p{
+        margin-top:2rem;
+    }
+}
+/*design box*/
+.line_box{
+    padding:2.5rem 2rem 0rem 2rem;
+    border-radius: 10%;
+    border:1px solid #fff;
+    &::after{
+        content: "";
+        display: block;
+        width:30%;
+        height: 1px;
+        margin: 3rem auto;
+        background-color: #fff;
+    }
 }
 /*****header******/
 .header_box{
@@ -28,7 +123,7 @@
             height:3.5rem;
             display: inline-block;
             border-radius: 2.5rem;
-            background-color: red;
+            background-color: #ffc400;
             vertical-align: middle;
         }
         strong{
@@ -62,16 +157,25 @@
 .contents_box{
     display: flex;
     .content{
-        position: fixed;
-        top:0;
-        left:0;
-        right:0;
-        bottom:0;
-        max-width:100%;
-        max-height: 100%;
-        z-index: 1;
-        &.about_me{
-            background: url(../images/img_mountain1280.jpg) no-repeat 0 0 / cover;
+        position: relative;
+        width:100%;
+        height: 100%;
+        .inner_box{
+            position: absolute;
+            left: 0;
+            right:0;
+            top:0;
+            bottom:0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            &.about_me{
+                background: url(../images/img_mountain1280.jpg) no-repeat 0 0 / cover;
+            }
+        }
+        p{
+            font-size: 1.3rem;
         }
     }
 }

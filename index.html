@@ -24,8 +24,31 @@
             </ul>
         </header>
         <section class="contents_box">
-            <div class="content about_me">
-                
+            <div class="content">
+                <div class="inner_box about_me">
+                    <div class="line_box">
+                        <h3 class="h3_tit">
+                            Web<br>Publisher
+                        </h3>
+                        <div class="sub_tit">Heading to the top</div>
+                        <div class="sub_tit">Tracking the dream</div>
+                        <p class="fc_white">웹 퍼블리셔로서 정진하고 있는 <strong class="fc_yellow">박 은 교</strong>의 포트폴리오 공간입니다.</p>
+                    </div>
+                    <a href="mailto:xoxo.popeye77@gmail.com" class="btn common_btn">Contact me</a>
+                </div>
+            </div>
+            <div class="content">
+                <div class="inner_box about_me">
+                    <div class="line_box">
+                        <h3 class="h3_tit">
+                            Web<br>Publisher
+                        </h3>
+                        <div class="sub_tit">Heading to the top</div>
+                        <div class="sub_tit">Tracking the dream</div>
+                        <p class="fc_white">웹 퍼블리셔로서 정진하고 있는 <strong class="fc_yellow">박 은 교</strong>의 포트폴리오 공간입니다.</p>
+                    </div>
+                    <a href="mailto:xoxo.popeye77@gmail.com" class="btn common_btn">Contact me</a>
+                </div>
             </div>
         </section>
     </div>
@@ -33,4 +56,14 @@
 <script type="text/javascript" src="js/jquery-3.6.0.min.js"></script>
 <!-- Compiled and minified JavaScript -->
 <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<script>
+    $('.contents_box').slick({
+        dots: true,
+        arrows: false,
+        infinite: true,
+        speed: 300,
+        slidesToShow: 1,
+        adaptiveHeight: true
+    });
+</script>
 </html>
