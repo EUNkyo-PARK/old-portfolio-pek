@@ -42,17 +42,18 @@
                     </div>
                     <div class="step_box">
                         <ul>
-                            <li class="step"><a href="#lululemon">룰루레몬</a></li>
-                            <li class="step"><a href="#k_stock">한국증권금융 <i class="ico_task"></i></a></li>
-                            <li class="step"><a href="#samsung">삼성생명 <i class="ico_task"></i></a></li>
-                            <li class="step"><a href="#justice">검찰 차세대 KICS <i class="ico_task"></i></a></li>
+                            <li class="step"><a href="#" data-index="2">룰루레몬</a></li>
+                            <li class="step"><a href="#" data-index="3">한국증권금융 <i class="ico_task"></i></a></li>
+                            <li class="step"><a href="#" data-index="4">삼성생명 <i class="ico_task"></i></a></li>
+                            <li class="step"><a href="#" data-index="5">검찰 차세대 KICS <i class="ico_task"></i></a></li>
+                            <li class="step"><a href="#" data-index="6">Aero K </a></li>
                         </ul>
                     </div>
                     <div class="right_bottom"><p class="fc_gray">프로젝트 명을 클릭시 해당 페이지로 넘어갑니다.</p></div>
                 </div>
                 <div class="blur_box"></div>
             </div>
-            <div class="content lululemon" id="lululemon">
+            <div class="content lululemon">
                 <div class="inner_box">
                     <div class="left_bottom pr25">
                         <div class="line_tb_box">
@@ -64,13 +65,13 @@
                         <h3 class="h3_tit tal">
                             Lululemon
                         </h3>
-                        <div class="sub_tit tal">Personal project for refreshing of the pages</div>
+                        <div class="sub_tit tal">개인 프로젝트</div>
                         <p class="fc_white">요가 및 각종 트레이닝용 의복을 판매하는 <strong class="fc_yellow">'룰루레몬'</strong>의 메인 페이지와 서브 한 페이지를 재구성하였습니다.</p>
-                        <a href="" class="btn common_btn">Show more</a>
+                        <a href="#none" aria-label="자세히보기" class="btn common_btn">Show more</a>
                     </div>
                 </div>
             </div>
-            <div class="content k_stock" id="k_stock">
+            <div class="content k_stock">
                 <div class="inner_box">
                     <div class="right_top">
                         <h3 class="h3_tit tar">
@@ -84,11 +85,11 @@
                                 <i class="ico_scroll"></i>
                             </div>
                         </div>
-                        <a href="" class="btn common_btn">Show more</a>
+                        <div class="fr"><a href="#none" aria-label="자세히보기" class="btn common_btn">Show more</a></div>
                     </div>
                 </div>
             </div>
-            <div class="content samsung" id="samsung">
+            <div class="content samsung">
                 <div class="inner_box">
                     <div class="right_bottom">
                         <h3 class="h3_tit tar">
@@ -99,7 +100,7 @@
                     </div>
                 </div>
             </div>
-            <div class="content justice" id="justice">
+            <div class="content justice">
                 <div class="inner_box">
                     <div class="left_bottom">
                         <h3 class="h3_tit tal">
@@ -107,6 +108,24 @@
                         </h3>
                         <div class="sub_tit tal">검찰 차세대 KICS</div>
                         <p class="fc_white tal">기존 홈페이지를 리뉴얼하는 차세대 프로젝트로서 검찰 내 4 기관 중 법무부 팀에 소속되어 2022.06월부터 2023.01월까지 <strong class="fc_yellow">총 8개월</strong>간 진행되었습니다. <br>국가기관이고 기밀문서가 많아 사이트에 접속하거나 화면을 가져오는 것이 불가하여 볼 수 없는 점 양해바랍니다.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="content aerok">
+                <div class="inner_box">
+                    <div class="left_top">
+                        <h3 class="h3_tit tal">
+                            Aero K
+                        </h3>
+                        <div class="sub_tit tal">Aero K 제안</div>
+                        <p class="fc_white tal">항공사 <strong class="fc_yellow">Aero K</strong>의 디자인 및 기획 제안을 위해 만들어진 화면입니다. 모바일을 위한 화면이며 제안을 위해 만들어졌기 때문에 공식 페이지는 아닙니다.</p>
+                        <div class="line_tb_box -mobile mt20">
+                            <div class="pf_img">
+                                <img src="./images/img_arerok_site.jpeg" alt="">
+                                <i class="ico_scroll"></i>
+                            </div>
+                        </div>
+                        <a href="#none" aria-label="자세히보기" class="btn common_btn">Show more</a>
                     </div>
                 </div>
             </div>
@@ -125,10 +144,28 @@
         infinite: true,
         speed: 300,
         slidesToShow: 1,
-        adaptiveHeight: true
+        adaptiveHeight: true,
         });
-        
     });
+
+    function contextClick(){
+        const menuList = $('.step_box ul');
+        const $button = menuList.find('a');
+        const $dots = $('.slick-dots');
+
+        $('.contents_box').on('beforeChange', function(event, slick, currentSlide, nextSlide){
+            $dots.find('li').removeClass('active');
+            $dots.find('li').eq(nextSlide).addClass('active');
+        });
+
+        // go to slide index when context link is clicked
+        $button.on('click', function(e){
+            e.preventDefault();
+            const index = $(this).data('index');
+            $('.contents_box').slick('slickGoTo', index);
+        });
+    }
+    contextClick();
 
 </script>
 </html>

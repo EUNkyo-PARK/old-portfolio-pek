@@ -28,6 +28,7 @@
     }
 }
 .common_btn {
+    display: inline-block;
     background: none;
     border: 1px solid #fff;
     color: #fff;
@@ -62,6 +63,9 @@
   }
 }
 /*margin*/
+.ma0{
+    margin: auto 0;
+}
 .mt20{
     margin-top: 2rem;
 }
@@ -133,6 +137,12 @@
     margin-bottom: 1.5rem;
     border-top:1px solid #fff;
     border-bottom:1px solid #fff;
+    &.-mobile{
+        width: 40vh;
+        .pf_img{
+            max-height: 47rem;
+        }
+    }
 }
 .blur_box{
     position: absolute;
@@ -216,7 +226,6 @@
     background: url(../images/ico_arrow_right.png) no-repeat 0 0 / cover;
     vertical-align: middle;
 }
-
 
 /*****header******/
 .header_box{
@@ -303,12 +312,19 @@
         &.justice{
             background: url(../images/img_justice.png) no-repeat 50% 50% / cover;
         }
+        &.aerok{
+            background: url(../images/img_aerok.png) no-repeat 50% 50% / cover;
+        }
         .inner_box{
+            display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
         }
         .step_box{
             position: absolute;
             right:18%;
-            bottom:30%;
+            bottom:25%;
             font-size: 1.6rem;
             z-index: 99;
             ul{
@@ -363,7 +379,7 @@
                 &::after{
                     content: '';
                     position: absolute;
-                    left:0.65rem;
+                    left:0.7rem;
                     top:1.5rem;
                     display: inline-block;
                     width:2px;
@@ -382,6 +398,15 @@
                     .ico_task{
                         background: url(../images/ico_task02.png) no-repeat 0 0 / cover;
                     }
+                }
+            }
+            .slick-dots{
+                flex-direction: column;
+                align-items: stretch;
+                &::after{
+                    display: none;
+                }
+                li{
                 }
             }
         }
@@ -413,9 +438,9 @@
     }
 }
 
-@media only screen and (max-width: 480px) {
-    .pf_img{
-        max-height: 27rem !important;
+@media only screen and (max-width: 600px) {
+    .line_tb_box{
+        display: none !important;
     }
     .h3_tit{
         font-size: 4.5rem;
