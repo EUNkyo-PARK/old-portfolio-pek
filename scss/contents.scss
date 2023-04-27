@@ -3,6 +3,7 @@
 // import
 @import 'reset';
 
+
 .wrap{
     width:100%;
     height:auto;
@@ -193,14 +194,18 @@
 /*icon*/
 .ico_scroll{
     position: absolute;
-    bottom:3rem;
-    left:45%;
-    right:45%;
-    width:3.6rem;
-    height:3.6rem;
+    bottom:4rem;
+    left:46%;
+    right:46%;
+    width:3rem;
+    height:3rem;
     opacity: 0;
     transition: all 0.5s;
-    background: url(../images/ico_scroll.png) no-repeat 0 0 / cover;
+    animation-name:bounce;
+    animation-duration:1s;
+    animation-iteration-count:infinite;
+    animation-direction: alternate;
+    background: url(../images/ico_scroll.png) no-repeat 0 0 /3rem 3rem;
 }
 .ico_line{
     display: inline-block;
@@ -406,8 +411,6 @@
                 &::after{
                     display: none;
                 }
-                li{
-                }
             }
         }
         .pf_img{
@@ -449,3 +452,12 @@
         background-size: 200% 100% !important;
     }
 }
+
+@keyframes bounce {
+    from {
+      transform:translateY(0px);
+    }
+    to {
+      transform:translateY(10px);
+    }
+  }
