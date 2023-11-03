@@ -63,6 +63,22 @@
     width: 150%;
   }
 }
+.btn_back{
+    position: relative;
+    padding-left: 2rem;
+    color: #fff;
+    font-size: 1.4rem;
+    &::before{
+        content: '';
+        display: inline-block;
+        position: absolute;
+        left: 0;
+        top:2px;
+        width: 0.8rem;
+        height: 1.4rem;
+        background: url(../images/arrow-small-left.png) no-repeat 0 0 / 0.8rem 1.4rem;
+    }
+}
 /*margin*/
 .ma0{
     margin: auto 0;
@@ -320,24 +336,30 @@
         &.aerok{
             background: url(../images/img_aerok.png) no-repeat 50% 50% / cover;
         }
+        &.lguplus{
+            background: url(../images/img_lguplus.png) no-repeat 50% 50% / cover;
+        }
         .inner_box{
             display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
         }
         .step_box{
             position: absolute;
-            right:18%;
-            bottom:25%;
+            right:0;
+            top:25%;
+            width:55%;
+            height: calc(100% - 300px);
             font-size: 1.6rem;
             z-index: 99;
+            overflow: auto;
             ul{
+                position: relative;
                 &::after{
                     content: '';
                     position: absolute;
                     left:0.3rem;
-                    bottom:-1.2rem;
                     display: inline-block;
                     width:0.8rem;
                     height: 0.8rem;
