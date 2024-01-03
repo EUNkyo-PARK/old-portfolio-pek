@@ -232,12 +232,19 @@
 .ico_task{
     position: absolute;
     right:-5rem;
-    top:0.1rem;
+    top:0.3rem;
     display: inline-block;
     width:4rem;
-    height: 2rem;
+    height: 1.8rem;
     border-radius: 1.5rem;
-    background: url(../images/ico_task.png) no-repeat 0 0 / cover;
+    background-color: #fff;
+    color: #121212;
+    font-size: 1.1rem;
+    text-align: center;
+    line-height: 1.8rem;
+    font-style: normal;
+    text-shadow: none;
+    font-weight: 900;
 }
 .arr_right{
     display: inline-block;
@@ -429,7 +436,7 @@
                         }
                     }
                     .ico_task{
-                        background: url(../images/ico_task02.png) no-repeat 0 0 / cover;
+                        background-color:#ffc400;
                     }
                 }
             }
